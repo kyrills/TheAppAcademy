@@ -9,13 +9,10 @@ var natoAlphabet: Dictionary<String, String> = ["a": "Alpha", "b": "Bravo", "c" 
                                                 "y": "Yankee", "z": "Zulu"]
 
 func toNato(_ words: String) -> String{
-    for letter in words.characters
-{
+    for letter in words.characters{
         let temp: String = String(letter)
-        
         print("\(String(describing: natoAlphabet[temp]))")
     }
     return ""
 }
-
 toNato("Hey man how are you!".lowercased())
