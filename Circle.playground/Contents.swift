@@ -79,8 +79,12 @@ let itemDictionary = itemsJSONString.parseJSONString as? NSDictionary
 let itemsArray = itemDictionary?["PraxisItemsForSale"] as? NSArray
 
 for praxisItem in itemsArray! {
-    if let currentItem = praxisItem as? Dictionary<String, AnyObject>, let name = currentItem["name"] {
-        print(name)
+    if let currentItem = praxisItem as? Dictionary<String, AnyObject>,
+        let name = currentItem["name"],
+        let price = currentItem["price"]{
+        print(name, price)
+    } else {
+        print("Bad Key")
     }
 }
 
