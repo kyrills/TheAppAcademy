@@ -52,3 +52,24 @@ default:
 print(errorString)
 
 
+enum Stones {
+    case Red
+    case Blue
+    case Green
+    case Purple
+}
+
+var colourStones: Stones = Stones.Blue
+var message1: String
+switch colourStones {
+case .Red:
+    message1 = "You got the Red stone"
+case .Blue:
+    message1 = "You got the Blue stone"
+case .Green:
+    message1 = "You got the Green stone"
+case .Purple:
+    message1 = "You got the Purple stone"
+}
+
+print(message1)
