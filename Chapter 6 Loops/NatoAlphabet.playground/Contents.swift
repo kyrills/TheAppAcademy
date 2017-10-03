@@ -8,10 +8,17 @@ var natoAlphabet: Dictionary<String, String> = ["a": "Alpha", "b": "Bravo", "c" 
                                                 "u": "Uniform", "v": "Victor", "w": "Whiskey", "x": "Xray",
                                                 "y": "Yankee", "z": "Zulu"]
 
+var emptyArray: Array<String> = Array()
+
 func toNato(_ words: String) -> String{
     for letter in words.characters{
         let temp: String = String(letter)
-        print("\(String(describing: natoAlphabet[temp]))")
+        if let test = natoAlphabet[temp]{
+            emptyArray.append(test)
+        }
+    }
+    for i in emptyArray{
+        print(i, terminator: " ")
     }
     return ""
 }
