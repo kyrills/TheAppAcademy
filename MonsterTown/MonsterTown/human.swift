@@ -10,4 +10,9 @@ class Human{
         self.type = type
         self.bones = bones
     }
+    
+    func talk(word: String){
+        var test = ""
+        
+    }
 }
