@@ -25,14 +25,14 @@ class ViewController: UIViewController {
 
     @IBAction func lightSwitch(_ sender: Any) {
         
-        if checker == 0{
-            lightOff.image = UIImage(named: "lightOn")
-            checker = 1
-        } else{
-            lightOff.image = UIImage(named: "lightOff")
-            checker = 0
+//        if checker == 0{
+//            lightOff.image = UIImage(named: "lightOn")
+//            checker = 1
+//        } else{
+//            lightOff.image = UIImage(named: "lightOff")
+//            checker = 0
         }
     }
     
-}
+
 
