@@ -17,29 +17,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light-bulb-off-hi" highlightedImage="light-bulb-on-md" translatesAutoresizingMaskIntoConstraints="NO" id="LQZ-I2-7Nw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lightOff" translatesAutoresizingMaskIntoConstraints="NO" id="LQZ-I2-7Nw">
                                 <rect key="frame" x="16" y="20" width="343" height="627"/>
                             </imageView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0oT-ma-y1J">
-                                <rect key="frame" x="164" y="616" width="49" height="31"/>
-                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDA-0G-jZm">
+                                <rect key="frame" x="140" y="617" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Turn Light on">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="lightSwitch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2L8-cb-E5h"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0oT-ma-y1J" secondAttribute="trailing" constant="164" id="0kO-pR-peP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0oT-ma-y1J" secondAttribute="bottom" constant="20" id="0qR-yh-4aV"/>
-                            <constraint firstItem="0oT-ma-y1J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="596" id="4ao-VS-QZe"/>
                             <constraint firstItem="LQZ-I2-7Nw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="8B5-vc-lai"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LQZ-I2-7Nw" secondAttribute="trailing" constant="16" id="F2w-B1-AqH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LQZ-I2-7Nw" secondAttribute="bottom" constant="20" id="egQ-Y9-ZrI"/>
-                            <constraint firstItem="0oT-ma-y1J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="164" id="lNO-nM-Sez"/>
                             <constraint firstItem="LQZ-I2-7Nw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nJB-TH-dh4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="lightBulbOff" destination="LQZ-I2-7Nw" id="d1Z-Ph-hsD"/>
-                        <outlet property="lightSwitch" destination="0oT-ma-y1J" id="NnS-az-bFp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -48,7 +50,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="light-bulb-off-hi" width="336" height="590"/>
-        <image name="light-bulb-on-md" width="240" height="298"/>
+        <image name="lightOff" width="336" height="590"/>
     </resources>
 </document>

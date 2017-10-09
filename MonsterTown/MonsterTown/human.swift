@@ -12,7 +12,6 @@ class Human{
     }
     
     func talk(word: String){
-        var test = ""
-        
+            print(word)
     }
 }
