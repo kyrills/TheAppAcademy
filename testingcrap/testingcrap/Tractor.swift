@@ -13,6 +13,9 @@ class Tractor: Vehicle {
                 cargo += 1
             }
             print(cargo)
+            
+            
+            //
         }
 }
 
