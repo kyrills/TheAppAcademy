@@ -1,21 +1,21 @@
-//
-//  ShoppingListTableViewController.swift
-//  shoppingList
-//
-//  Created by Kyrill van Seventer on 13/10/2017.
-//  Copyright © 2017 Kyrill van Seventer. All rights reserved.
-//
-
 import UIKit
 
-class ShoppingListTableViewController: UITableViewController {
+class ShoppingListTableViewController: UITableViewController, UINavigationControllerDelegate {
     
-    var productDictionary = ["Red Bull" : #imageLiteral(resourceName: "RedBull"), "Bread" : #imageLiteral(resourceName: "Bread"), "Pasta" : #imageLiteral(resourceName: "Pasta"), "Cola" : #imageLiteral(resourceName: "Cola")]
+//    var productDictionary = ["Red Bull" : #imageLiteral(resourceName: "RedBull"), "Bread" : #imageLiteral(resourceName: "Bread"), "Pasta" : #imageLiteral(resourceName: "Pasta"), "Cola" : #imageLiteral(resourceName: "Cola")]
+    
+    
+    @IBOutlet weak var itemInput: UITextField!
+    var productArray : [String] = []
+    var items: String = ""
+//    var currentSelectedShopItem: Int
+    
+    
     var dictKeys: [String]?
     override func viewDidLoad() {
         super.viewDidLoad()
-        let keys = productDictionary.keys
-        dictKeys = Array(keys)
+//        let keys = productDictionary.keys
+//        dictKeys = Array(keys)
 
     }
 
@@ -33,20 +33,33 @@ class ShoppingListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return productDictionary.count
+        return productArray.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celliD", for: indexPath)
-        cell.imageView?.image = productDictionary[dictKeys![indexPath.row]]
-        cell.textLabel?.text = dictKeys![indexPath.row]
-
+//        cell.imageView?.image = productDictionary[dictKeys![indexPath.row]]
+//            let listRow = String(indexPath.row + 1)
+//            cell.textLabel?.text = listRow
+            cell.textLabel?.text = productArray[indexPath.row]
 
         // Configure the cell...
 
         return cell
     }
+    
+    @IBAction func addItemButton(_ sender: Any) {
+        if let textInput = itemInput.text{
+            productArray.append(textInput)
+            self.tableView.reloadData()
+            itemInput.text = ""
+        }
+    }
+    
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+
     
     
     
@@ -58,17 +71,40 @@ class ShoppingListTableViewController: UITableViewController {
     }
     */
 
-    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            productArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
+
+        
+        //            currentSelectedShopItem = productArray[indexPath.row]
+        
+//        ovefunc tableView(tableView: UITableView, didSelectRowAt: indexPath){
+        
+//        }
+        
     }
-    */
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        items = productArray[indexPath.row]
+
+        performSegue(withIdentifier: "detailView", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailView"{
+            let detailView = segue.destination as? detailViewController
+            detailView?.shopItem = items
+        }
+    }
+    
 
     /*
     // Override to support rearranging the table view.

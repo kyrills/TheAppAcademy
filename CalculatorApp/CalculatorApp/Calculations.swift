@@ -24,7 +24,7 @@ class Calculations{
         accumulator =  first * accumulator
         return accumulator
     }
-    
+     
     func doOperation(operatorType: String) -> String{
         var result = ""
         switch operatorType {
