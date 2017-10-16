@@ -17,9 +17,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="vSW-g6-uB3">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNQ-ky-gw6">
+                                    <rect key="frame" x="0.0" y="6" width="46" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="46" id="Eva-Sa-7Mn"/>
+                                        <constraint firstAttribute="height" constant="30" id="kQ0-te-Ysw"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                </button>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NwX-MC-j2e">
+                                    <rect key="frame" x="54" y="6" width="321" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="kT9-xg-Mg1"/>
+                                        <constraint firstAttribute="width" constant="321" id="oCI-0L-pma"/>
+                                    </constraints>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="aNQ-ky-gw6" firstAttribute="top" secondItem="vSW-g6-uB3" secondAttribute="top" constant="6" id="ILa-eF-bXC"/>
+                                <constraint firstItem="NwX-MC-j2e" firstAttribute="top" secondItem="vSW-g6-uB3" secondAttribute="top" constant="6" id="Ped-pY-zXL"/>
+                                <constraint firstItem="NwX-MC-j2e" firstAttribute="leading" secondItem="aNQ-ky-gw6" secondAttribute="trailing" constant="8" id="ZVh-Bm-SOb"/>
+                                <constraint firstAttribute="bottom" secondItem="NwX-MC-j2e" secondAttribute="bottom" constant="8" id="hnU-uB-JCB"/>
+                                <constraint firstItem="aNQ-ky-gw6" firstAttribute="leading" secondItem="vSW-g6-uB3" secondAttribute="leading" id="t0B-AH-5F8"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="celliD" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Amp-l2-EQ5">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="celliD" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celliD" id="Amp-l2-EQ5">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="contentViewID" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Amp-l2-EQ5" id="PGO-8f-rth">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -35,7 +67,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rww-So-5P5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="205" y="110"/>
+            <point key="canvasLocation" x="204" y="109.29535232383809"/>
         </scene>
     </scenes>
 </document>
