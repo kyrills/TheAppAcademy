@@ -1,24 +1,23 @@
-//
-//  detailViewController.swift
-//  shoppingList
-//
-//  Created by Kyrill van Seventer on 16/10/2017.
-//  Copyright © 2017 Kyrill van Seventer. All rights reserved.
-//
-
 import UIKit
 
 class detailViewController: UIViewController, UINavigationControllerDelegate {
 
     @IBOutlet weak var detailViewLabel: UILabel!
-    var shopItem: String = " "
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var productImage: UIImageView!
     var imageStore: String = " "
-    
+    var selectedDetailObject: ShoppingItems?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        detailViewLabel.text = shopItem
+        detailViewLabel.text = selectedDetailObject?.productName
+//        var prices: = selectedDetailObject?.productPrice
+        
+        let a:Double = (selectedDetailObject?.productPrice)!
+        let b:String = String(format:"%.2f", a)
 
+        priceLabel.text = b
+        
         // Do any additional setup after loading the view.
     }
 
@@ -27,9 +26,6 @@ class detailViewController: UIViewController, UINavigationControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
-
     /*
     // MARK: - Navigation
 

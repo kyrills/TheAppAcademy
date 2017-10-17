@@ -102,17 +102,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y80-Ch-y47">
+                                <rect key="frame" x="62" y="139" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fOV-wl-0hC">
+                                <rect key="frame" x="67" y="245" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.29901419540000002" blue="0.28636720199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="fOV-wl-0hC" firstAttribute="top" secondItem="Y80-Ch-y47" secondAttribute="bottom" constant="85" id="1c7-0S-g4X"/>
                             <constraint firstItem="day-dm-G7X" firstAttribute="trailing" secondItem="Lbr-bb-UR4" secondAttribute="trailing" constant="62" id="41O-XJ-jEi"/>
+                            <constraint firstItem="day-dm-G7X" firstAttribute="trailing" secondItem="fOV-wl-0hC" secondAttribute="trailing" constant="68" id="7Pd-lD-YNL"/>
                             <constraint firstItem="Lbr-bb-UR4" firstAttribute="leading" secondItem="day-dm-G7X" secondAttribute="leading" constant="62" id="Fml-rd-R0L"/>
+                            <constraint firstItem="Y80-Ch-y47" firstAttribute="top" secondItem="Lbr-bb-UR4" secondAttribute="bottom" constant="8" id="Lx9-qT-7Ic"/>
+                            <constraint firstItem="fOV-wl-0hC" firstAttribute="top" secondItem="Y80-Ch-y47" secondAttribute="bottom" constant="85" id="XyV-mp-DS7"/>
+                            <constraint firstItem="Y80-Ch-y47" firstAttribute="leading" secondItem="day-dm-G7X" secondAttribute="leading" constant="62" id="Y8D-LC-EMN"/>
+                            <constraint firstItem="fOV-wl-0hC" firstAttribute="leading" secondItem="day-dm-G7X" secondAttribute="leading" constant="67" id="bVD-mK-bgY"/>
+                            <constraint firstItem="day-dm-G7X" firstAttribute="trailing" secondItem="Y80-Ch-y47" secondAttribute="trailing" constant="271" id="eSf-11-UQF"/>
+                            <constraint firstItem="day-dm-G7X" firstAttribute="bottom" secondItem="fOV-wl-0hC" secondAttribute="bottom" constant="294" id="vRg-9Z-xas"/>
                             <constraint firstItem="Lbr-bb-UR4" firstAttribute="top" secondItem="day-dm-G7X" secondAttribute="top" constant="29" id="xNL-5l-BZV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="day-dm-G7X"/>
                     </view>
                     <connections>
                         <outlet property="detailViewLabel" destination="Lbr-bb-UR4" id="NGs-tt-LJl"/>
+                        <outlet property="priceLabel" destination="Y80-Ch-y47" id="fr2-se-dQ0"/>
+                        <outlet property="productImage" destination="fOV-wl-0hC" id="KL8-DZ-Dhd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8g-HM-jUF" userLabel="First Responder" sceneMemberID="firstResponder"/>
