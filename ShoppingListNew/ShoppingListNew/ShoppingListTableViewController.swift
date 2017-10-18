@@ -9,11 +9,22 @@ class ShoppingListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(ShoppingListTableViewController.notifyObservers), name: NSNotification.Name(rawValue: notificationIDs.shoppingdataID), object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(ShoppingListTableViewController.notifyObservers),
+                                               name: NSNotification.Name(rawValue: notificationIDs.shoppingdataID),
+                                               object: nil)
         ShoppingItemsService.shoppingListData()
 
+        let shoppingCell = UINib.init(nibName: "ShoppingCell", bundle: nil)
+        self.tableView.register(shoppingCell, forCellReuseIdentifier: tableCellID.shoppingCellId)
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: tableCellID.shoppingCellId,
+//                                                 for: indexPath) as! ShoppingCell
+//        cell.cellNameLabel =
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -28,11 +39,22 @@ class ShoppingListTableViewController: UITableViewController {
         return shoppingItemObject.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: tableCellID.cellID, for: indexPath)
+//        let cell = tableView.dequeueReusableCell(withIdentifier: tableCellID.cellID, for: indexPath)
         let storeObject = shoppingItemObject[indexPath.row]
-        cell.textLabel?.text = storeObject.productName
+//        cell.textLabel?.text = storeObject.productName
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: tableCellID.shoppingCellId,
+                                                 for: indexPath) as! ShoppingCell
+        cell.cellNameLabel.text = storeObject.productName
         return cell
     }
+    
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if indexPath.row == 0{
+//            return 100
+//        }
+//        return 44
+//    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedItem = shoppingItemObject[indexPath.row]

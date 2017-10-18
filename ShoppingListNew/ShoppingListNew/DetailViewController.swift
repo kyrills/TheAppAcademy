@@ -39,6 +39,5 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
         productImageView.image = image
         dismiss(animated: true, completion: nil)
         }
-    
 
 }

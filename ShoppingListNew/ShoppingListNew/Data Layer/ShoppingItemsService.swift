@@ -14,20 +14,14 @@ class ShoppingItemsService{
         let orange = ShoppingItems.init(productPrice: 8.50, productName: "Orange", productImage: #imageLiteral(resourceName: "bronn"))
         let apple = ShoppingItems.init(productPrice: 2.50, productName: "Apple", productImage: #imageLiteral(resourceName: "bronn"))
         
-//        shoppingArray.append(paprika)
-//        shoppingArray.append(beer)
-//        shoppingArray.append(redbull)
-//        shoppingArray.append(ham)
-//        shoppingArray.append(cheese)
-//        shoppingArray. append(orange)
-//        shoppingArray.append(apple)
+
         
         shoppingArray = [paprika, beer, redbull, cheese, ham, orange, apple]
         
         let shoppingItemDictionary = [dictionaryKeys.shoppingData :shoppingArray]
         
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue:notificationIDs.shoppingdataID), object: self, userInfo: shoppingItemDictionary)
-//        return shoppingArray
-        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue:notificationIDs.shoppingdataID),
+                                        object: self,
+                                        userInfo: shoppingItemDictionary)
     }
 }

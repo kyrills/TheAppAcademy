@@ -2,6 +2,7 @@ import Foundation
 
 struct tableCellID{
     static let cellID = "cellID"
+    static let shoppingCellId = "ShoppingCellID"
 }
 
 struct segues {
