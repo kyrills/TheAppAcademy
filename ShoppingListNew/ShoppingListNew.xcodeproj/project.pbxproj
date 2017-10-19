@@ -12,6 +12,7 @@
 		D018BDF31F974DF5002DEA27 /* A Perfect Place - TTF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D018BDF11F974DF5002DEA27 /* A Perfect Place - TTF.ttf */; };
 		D018BDF61F975824002DEA27 /* ShoppingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D018BDF41F975824002DEA27 /* ShoppingCell.swift */; };
 		D018BDF71F975824002DEA27 /* ShoppingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D018BDF51F975824002DEA27 /* ShoppingCell.xib */; };
+		D018BDF91F9767ED002DEA27 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D018BDF81F9767ED002DEA27 /* DetailTableViewController.swift */; };
 		D02CCCB21F95E71D0049CA1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CCCB11F95E71D0049CA1F /* AppDelegate.swift */; };
 		D02CCCB41F95E71D0049CA1F /* ShoppingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CCCB31F95E71D0049CA1F /* ShoppingListTableViewController.swift */; };
 		D02CCCB71F95E71D0049CA1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02CCCB51F95E71D0049CA1F /* Main.storyboard */; };
@@ -21,15 +22,19 @@
 		D02CCCC71F95EA120049CA1F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CCCC61F95EA120049CA1F /* DetailViewController.swift */; };
 		D02CCCCA1F95ED3D0049CA1F /* ShoppingItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CCCC91F95ED3D0049CA1F /* ShoppingItems.swift */; };
 		D02CCCCC1F95ED570049CA1F /* ShoppingItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CCCCB1F95ED570049CA1F /* ShoppingItemsService.swift */; };
+		D050BFA41F97922C009C37D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D050BFA31F97922C009C37D9 /* GoogleService-Info.plist */; };
 		D0CD93541F9654AA00E6AFFC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD93531F9654AA00E6AFFC /* Constants.swift */; };
+		F58E09FB73E29210F02D601B /* Pods_ShoppingListNew.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF36F5773C227C25ED80C0CD /* Pods_ShoppingListNew.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CBEC86F09441FA5478E9D656 /* Pods-ShoppingListNew.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingListNew.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingListNew/Pods-ShoppingListNew.debug.xcconfig"; sourceTree = "<group>"; };
 		D018BDEB1F9745DC002DEA27 /* ShoppingDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingDetailCell.swift; sourceTree = "<group>"; };
 		D018BDEC1F9745DC002DEA27 /* ShoppingDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoppingDetailCell.xib; sourceTree = "<group>"; };
 		D018BDF11F974DF5002DEA27 /* A Perfect Place - TTF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A Perfect Place - TTF.ttf"; sourceTree = "<group>"; };
 		D018BDF41F975824002DEA27 /* ShoppingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCell.swift; sourceTree = "<group>"; };
 		D018BDF51F975824002DEA27 /* ShoppingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShoppingCell.xib; sourceTree = "<group>"; };
+		D018BDF81F9767ED002DEA27 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		D02CCCAE1F95E71D0049CA1F /* ShoppingListNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingListNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D02CCCB11F95E71D0049CA1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D02CCCB31F95E71D0049CA1F /* ShoppingListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewController.swift; sourceTree = "<group>"; };
@@ -41,7 +46,10 @@
 		D02CCCC61F95EA120049CA1F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D02CCCC91F95ED3D0049CA1F /* ShoppingItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItems.swift; sourceTree = "<group>"; };
 		D02CCCCB1F95ED570049CA1F /* ShoppingItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemsService.swift; sourceTree = "<group>"; };
+		D050BFA31F97922C009C37D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0CD93531F9654AA00E6AFFC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F65B10972946FE12DC8C0F6D /* Pods-ShoppingListNew.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingListNew.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingListNew/Pods-ShoppingListNew.release.xcconfig"; sourceTree = "<group>"; };
+		FF36F5773C227C25ED80C0CD /* Pods_ShoppingListNew.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingListNew.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,12 +57,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F58E09FB73E29210F02D601B /* Pods_ShoppingListNew.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19045F865C601F0080F98695 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CBEC86F09441FA5478E9D656 /* Pods-ShoppingListNew.debug.xcconfig */,
+				F65B10972946FE12DC8C0F6D /* Pods-ShoppingListNew.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C28FCC2A01A7A19A35E72415 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF36F5773C227C25ED80C0CD /* Pods_ShoppingListNew.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D018BDEA1F9744F8002DEA27 /* TableCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +106,8 @@
 			children = (
 				D02CCCB01F95E71D0049CA1F /* ShoppingListNew */,
 				D02CCCAF1F95E71D0049CA1F /* Products */,
+				19045F865C601F0080F98695 /* Pods */,
+				C28FCC2A01A7A19A35E72415 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,8 +129,10 @@
 				D018BDEA1F9744F8002DEA27 /* TableCell */,
 				D02CCCC81F95EC780049CA1F /* Data Layer */,
 				D02CCCB51F95E71D0049CA1F /* Main.storyboard */,
+				D018BDF81F9767ED002DEA27 /* DetailTableViewController.swift */,
 				D02CCCBB1F95E71D0049CA1F /* Assets.xcassets */,
 				D02CCCBD1F95E71D0049CA1F /* LaunchScreen.storyboard */,
+				D050BFA31F97922C009C37D9 /* GoogleService-Info.plist */,
 				D02CCCC01F95E71D0049CA1F /* Info.plist */,
 				D02CCCB81F95E71D0049CA1F /* ShoppingListNew.xcdatamodeld */,
 			);
@@ -125,9 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D02CCCC31F95E71D0049CA1F /* Build configuration list for PBXNativeTarget "ShoppingListNew" */;
 			buildPhases = (
+				15B5D90AA80DE1C766015A2B /* [CP] Check Pods Manifest.lock */,
 				D02CCCAA1F95E71D0049CA1F /* Sources */,
 				D02CCCAB1F95E71D0049CA1F /* Frameworks */,
 				D02CCCAC1F95E71D0049CA1F /* Resources */,
+				C11F2732223F40279F5ABBEA /* [CP] Embed Pods Frameworks */,
+				4384E85DD1D0A5A53E2E4402 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -183,10 +216,69 @@
 				D018BDEE1F9745DC002DEA27 /* ShoppingDetailCell.xib in Resources */,
 				D02CCCBC1F95E71D0049CA1F /* Assets.xcassets in Resources */,
 				D02CCCB71F95E71D0049CA1F /* Main.storyboard in Resources */,
+				D050BFA41F97922C009C37D9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15B5D90AA80DE1C766015A2B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShoppingListNew-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4384E85DD1D0A5A53E2E4402 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShoppingListNew/Pods-ShoppingListNew-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C11F2732223F40279F5ABBEA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ShoppingListNew/Pods-ShoppingListNew-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShoppingListNew/Pods-ShoppingListNew-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D02CCCAA1F95E71D0049CA1F /* Sources */ = {
@@ -199,6 +291,7 @@
 				D02CCCCA1F95ED3D0049CA1F /* ShoppingItems.swift in Sources */,
 				D0CD93541F9654AA00E6AFFC /* Constants.swift in Sources */,
 				D018BDED1F9745DC002DEA27 /* ShoppingDetailCell.swift in Sources */,
+				D018BDF91F9767ED002DEA27 /* DetailTableViewController.swift in Sources */,
 				D02CCCB21F95E71D0049CA1F /* AppDelegate.swift in Sources */,
 				D018BDF61F975824002DEA27 /* ShoppingCell.swift in Sources */,
 				D02CCCC71F95EA120049CA1F /* DetailViewController.swift in Sources */,
@@ -336,6 +429,7 @@
 		};
 		D02CCCC41F95E71D0049CA1F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBEC86F09441FA5478E9D656 /* Pods-ShoppingListNew.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -352,6 +446,7 @@
 		};
 		D02CCCC51F95E71D0049CA1F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F65B10972946FE12DC8C0F6D /* Pods-ShoppingListNew.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
