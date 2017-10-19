@@ -3,6 +3,7 @@ import Firebase
 import FirebaseCore
 import FirebaseDatabase
 
+
 class ShoppingItemsService{
     var shoppingArray: [ShoppingItems] = []
     public static let sharedInstance = ShoppingItemsService()  // Singleton: https://en.wikipedia.org/wiki/Singleton_pattern
