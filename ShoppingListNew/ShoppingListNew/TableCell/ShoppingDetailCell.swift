@@ -13,6 +13,8 @@ class ShoppingDetailCell: UITableViewCell {
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
+    
     
     
     override func awakeFromNib() {

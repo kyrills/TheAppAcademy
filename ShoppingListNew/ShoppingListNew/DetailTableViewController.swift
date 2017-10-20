@@ -10,7 +10,6 @@ class DetailTableViewController: UITableViewController, UIImagePickerControllerD
 
         let detailCell = UINib.init(nibName: "ShoppingDetailCell", bundle: nil)
         self.tableView.register(detailCell, forCellReuseIdentifier: tableCellID.shoppingDetailCellID)
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,7 +29,6 @@ class DetailTableViewController: UITableViewController, UIImagePickerControllerD
         return 1
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: tableCellID.shoppingDetailCellID, for: indexPath) as! ShoppingDetailCell
         
@@ -40,10 +38,13 @@ class DetailTableViewController: UITableViewController, UIImagePickerControllerD
         cell.nameLabel.text = selectedDetailObject?.productName
         cell.priceLabel.text = b
         
-//        let url = URL(string: (selectedDetailObject?.productImage)!)
+        if let weight = selectedDetailObject?.productWeight{
+            cell.weightLabel.text = "\(weight)"
+        }
+//        cell.weightLabel.text = "\(selectedDetailObject?.productWeight)"
+        
         let url = URL(string: (selectedDetailObject?.productImage)!)
         cell.cellImage.kf.setImage(with: url)
-//        cell.cellImage.image = selectedDetailObject?.productImage
         
         return cell
     }

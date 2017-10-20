@@ -6,14 +6,13 @@ public class ShoppingItems{
     var productPrice: Double
     var productName: String
     var productImage: String
-//    var productImage: ImageView
+    var productWeight: Double
+    var id = NSUUID().uuidString
     
-    init(productPrice: Double, productName: String, productImage: String) {
+    init(productPrice: Double, productName: String, productImage: String, productWeight: Double) {
         self.productPrice = productPrice
         self.productName = productName
         self.productImage = productImage
+        self.productWeight = productWeight
     }
-//    let url = URL(string: "https://domain.com/image.jpg")!
-//    imageView.kf.setImage(with: url)
-    
 }

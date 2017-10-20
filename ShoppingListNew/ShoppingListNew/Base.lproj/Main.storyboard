@@ -32,7 +32,18 @@
                             <outlet property="delegate" destination="Yxc-Ia-Yr2" id="GgA-TH-QpG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="FXu-g6-1Up"/>
+                    <navigationItem key="navigationItem" id="FXu-g6-1Up">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="wP9-Hs-15W">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BvQ-61-5o7">
+                                <rect key="frame" x="313" y="7" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="addShoppingItem:" destination="Yxc-Ia-Yr2" eventType="touchUpInside" id="HJ1-4O-24i"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="wug-NH-Qzi" kind="show" identifier="detailViewSegue" id="gFT-gt-uSU"/>
                         <segue destination="WH6-ir-Xfu" kind="show" identifier="detailTableViewSegue" id="2gH-Th-Cuo"/>
