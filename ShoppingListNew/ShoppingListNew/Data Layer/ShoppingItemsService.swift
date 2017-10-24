@@ -2,8 +2,10 @@ import Foundation
 import Firebase
 import FirebaseCore
 import FirebaseDatabase
+import FirebaseStorage
+//import SVProgressHUD
 
-class ShoppingItemsService{
+class ShoppingItemsService {
     var shoppingArray: [ShoppingItems] = []
     public static let sharedInstance = ShoppingItemsService()  // Singleton: https://en.wikipedia.org/wiki/Singleton_pattern
     
@@ -32,11 +34,19 @@ class ShoppingItemsService{
                                                 object: self,
                                                 userInfo: [dictionaryKeys.shoppingData :obj])
             }
-            
         })
-//        ref.child("ShoppingItems").observe(.child)
         
+        ref.child("ShoppingItems").observe(.childChanged, with: { (snapshot) in
+            if let data = snapshot.value as? NSDictionary,
+                let obj = self.oneDictionaryToOneObject(item: data){
+                obj.id = snapshot.key
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue:notificationIDs.changedShoppingData),
+                                                object: self,
+                                                userInfo: [dictionaryKeys.shoppingData :obj])
+            }
+        })
     }
+    
     func addShopItem(shopItem: ShoppingItems){
         let addDict = objToDictionary(shoppingItem: shopItem)
         ref.child("ShoppingItems").child(shopItem.id).setValue(addDict)
@@ -44,6 +54,11 @@ class ShoppingItemsService{
     
     func removeShopItem(shopItem: ShoppingItems){
         ref.child("ShoppingItems").child(shopItem.id).removeValue()
+    }
+    
+    func updateShopItem(shopItem: ShoppingItems){
+        let updated = objToDictionary(shoppingItem: shopItem)
+        ref.child("ShoppingItems").child(shopItem.id).updateChildValues(updated)
     }
     
     func objToDictionary(shoppingItem: ShoppingItems) -> Dictionary<String, Any>{
@@ -82,22 +97,75 @@ class ShoppingItemsService{
         }
     }
     
-//    func dictToShoppingItem(dict: NSDictionary) -> [ShoppingItems] {
-//        var shopItems: [ShoppingItems] = []
-//
-//        for key in dict.keyEnumerator() {
-//
-//            if let item = dict[key] as? NSDictionary,
-//                let productName = item["productName"] as? String,
-//                let productPrice = item["productPrice"],
-//                let productImage = item["productImage"],
-//                let productWeight = item["productWeight"]{
-//                let shoppingitemObject = ShoppingItems.init(productPrice: productPrice as! Double, productName: productName, productImage: productImage as! String, productWeight: productWeight as! Double)
-//                shopItems.append(shoppingitemObject)
-//            }
-//
-//        }
-//
-//        return shopItems
-//    }
-}
+    func uploadImage(image: UIImage, imageName: String){
+        
+        let storageRef = Storage.storage().reference()
+        let imagesRef = storageRef.child(imageName)
+        let data = UIImageJPEGRepresentation(image, 0.1)
+        // Upload file and metadata to the object ‘images/mountains.jpg’
+        // Create the file metadata
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        
+        // Upload file and metadata to the object 'images/mountains.jpg'
+//        let uploadTask = storageRef.putFile(from: localFile, metadata: metadata)
+        let uploadTask = imagesRef.putData(data!, metadata: metadata)
+
+        // Listen for state changes, errors, and completion of the upload.
+        uploadTask.observe(.resume) { snapshot in
+            // Upload resumed, also fires when the upload starts
+        }
+        
+        uploadTask.observe(.pause) { snapshot in
+            // Upload paused
+        }
+        
+        uploadTask.observe(.progress) { snapshot in
+            // Upload reported progress
+            let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
+                / Double(snapshot.progress!.totalUnitCount)
+        }
+        
+        uploadTask.observe(.success) { snapshot in
+            // Upload completed successfully
+            snapshot.reference.downloadURL(completion: { (url, error) in
+                self.ref.child("ShoppingItems").observe(.childAdded, with: { (snapshot) in
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue:notificationIDs.imageURL),
+                                                        object: self,
+                                                        userInfo: [notificationKeys.imageURL : url!])
+                
+                })
+                
+            })
+            
+        }
+        
+        
+        
+        uploadTask.observe(.failure) { snapshot in
+            if let error = snapshot.error as? NSError {
+                switch (StorageErrorCode(rawValue: error.code)!) {
+                case .objectNotFound:
+                    // File doesn't exist
+                    break
+                case .unauthorized:
+                    // User doesn't have permission to access file
+                    break
+                case .cancelled:
+                    // User canceled the upload
+                    break
+                    
+                    /* ... */
+                    
+                case .unknown:
+                    // Unknown error occurred, inspect the server response
+                    break
+                default:
+                    // A separate error occurred. This is a good place to retry the upload.
+                    break
+                }
+            }
+        }
+        }
+    }
+

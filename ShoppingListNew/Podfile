@@ -9,5 +9,7 @@ target 'ShoppingListNew' do
 pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'Kingfisher' , '~> 4.0'
+pod ‘Firebase/Storage’
+pod 'SVProgressHUD'
 
 end

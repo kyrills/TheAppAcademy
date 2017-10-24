@@ -1,19 +1,11 @@
-//
-//  ShoppingCell.swift
-//  ShoppingListNew
-//
-//  Created by Kyrill van Seventer on 18/10/2017.
-//  Copyright © 2017 Kyrill van Seventer. All rights reserved.
-//
-
 import UIKit
 
 class ShoppingDetailCell: UITableViewCell {
     
     @IBOutlet weak var cellImage: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var nameLabel: UITextField!
+    @IBOutlet weak var priceLabel: UITextField!
+    @IBOutlet weak var weightLabel: UITextField!
     
     
     

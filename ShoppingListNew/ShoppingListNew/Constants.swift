@@ -13,12 +13,17 @@ struct segues {
 struct notificationIDs {
     static let shoppingdataID =  "AnythingYouWant"
     static let addedShoppingData = "addedShoppingData"
+    static let changedShoppingData = "changedShoppingData"
+    static let imageURL = "imageURL"
 //    static let deletedShoppingData = "deletedShoppingData"
 }
 
 struct dictionaryKeys {
     static let shoppingData = "data"
 
+}
+struct notificationKeys {
+    static let imageURL = "imageURL"
 }
 
 struct dataStrings {

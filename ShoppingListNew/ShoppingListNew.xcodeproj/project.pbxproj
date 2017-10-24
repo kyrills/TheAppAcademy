@@ -19,7 +19,6 @@
 		D02CCCBA1F95E71D0049CA1F /* ShoppingListNew.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D02CCCB81F95E71D0049CA1F /* ShoppingListNew.xcdatamodeld */; };
 		D02CCCBC1F95E71D0049CA1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D02CCCBB1F95E71D0049CA1F /* Assets.xcassets */; };
 		D02CCCBF1F95E71D0049CA1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02CCCBD1F95E71D0049CA1F /* LaunchScreen.storyboard */; };
-		D02CCCC71F95EA120049CA1F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CCCC61F95EA120049CA1F /* DetailViewController.swift */; };
 		D02CCCCA1F95ED3D0049CA1F /* ShoppingItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CCCC91F95ED3D0049CA1F /* ShoppingItems.swift */; };
 		D02CCCCC1F95ED570049CA1F /* ShoppingItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CCCCB1F95ED570049CA1F /* ShoppingItemsService.swift */; };
 		D050BFA41F97922C009C37D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D050BFA31F97922C009C37D9 /* GoogleService-Info.plist */; };
@@ -43,7 +42,6 @@
 		D02CCCBB1F95E71D0049CA1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D02CCCBE1F95E71D0049CA1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D02CCCC01F95E71D0049CA1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D02CCCC61F95EA120049CA1F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D02CCCC91F95ED3D0049CA1F /* ShoppingItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItems.swift; sourceTree = "<group>"; };
 		D02CCCCB1F95ED570049CA1F /* ShoppingItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemsService.swift; sourceTree = "<group>"; };
 		D050BFA31F97922C009C37D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 			children = (
 				D02CCCB11F95E71D0049CA1F /* AppDelegate.swift */,
 				D02CCCB31F95E71D0049CA1F /* ShoppingListTableViewController.swift */,
-				D02CCCC61F95EA120049CA1F /* DetailViewController.swift */,
 				D0CD93531F9654AA00E6AFFC /* Constants.swift */,
 				D018BDEA1F9744F8002DEA27 /* TableCell */,
 				D02CCCC81F95EC780049CA1F /* Data Layer */,
@@ -263,15 +260,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ShoppingListNew/Pods-ShoppingListNew-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -296,7 +297,6 @@
 				D018BDF91F9767ED002DEA27 /* DetailTableViewController.swift in Sources */,
 				D02CCCB21F95E71D0049CA1F /* AppDelegate.swift in Sources */,
 				D018BDF61F975824002DEA27 /* ShoppingCell.swift in Sources */,
-				D02CCCC71F95EA120049CA1F /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

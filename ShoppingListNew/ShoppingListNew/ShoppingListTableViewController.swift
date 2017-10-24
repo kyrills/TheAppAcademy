@@ -17,6 +17,12 @@ class ShoppingListTableViewController: UITableViewController {
                                                name: NSNotification.Name(rawValue: notificationIDs.addedShoppingData),
                                                object: nil)
         
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(ShoppingListTableViewController.changedObservers),
+                                               name: NSNotification.Name(rawValue: notificationIDs.changedShoppingData),
+                                               object: nil)
+        
+        
         ShoppingItemsService.sharedInstance.getShoppingListData()
         
         let shoppingCell = UINib.init(nibName: "ShoppingCell", bundle: nil)
@@ -45,7 +51,6 @@ class ShoppingListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
             ShoppingItemsService.sharedInstance.removeShopItem(shopItem: self.shoppingItemObject[indexPath.row])
             shoppingItemObject.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -65,10 +70,8 @@ class ShoppingListTableViewController: UITableViewController {
     }
     
     @IBAction func addShoppingItem(_ sender: Any) {
-        //1. Create the alert controller.
         let alert = UIAlertController(title: "New Shopping Item", message: "Enter a new shopping Item", preferredStyle: .alert)
         
-        //2. Add the text field. You can configure it however you need.
         alert.addTextField { (textField) in
             textField.placeholder = "The New item"
         }
@@ -84,7 +87,6 @@ class ShoppingListTableViewController: UITableViewController {
             imageField.placeholder = "Image URL"
         }
         
-        // 3. Grab the value from the text field, and print it when the user clicks OK.
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             if let textField = alert?.textFields?[0].text,
                 let priceField = alert?.textFields?[1].text,
@@ -97,8 +99,6 @@ class ShoppingListTableViewController: UITableViewController {
                 print("Text field: \(textField)")
             }
         }))
-        
-        // 4. Present the alert.
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -113,8 +113,21 @@ class ShoppingListTableViewController: UITableViewController {
             let one = shopItemDict[dictionaryKeys.shoppingData]
             shoppingItemObject.append(one!)
             self.tableView.reloadData()
-            print(shoppingItemObject)
         }
     }
+    
+    @objc func changedObservers(notification: NSNotification) {
+        if let shopItemDict = notification.userInfo as? Dictionary<String , ShoppingItems> {
+            let changeShoppingItem = shopItemDict[dictionaryKeys.shoppingData]
+            self.shoppingItemObject = self.shoppingItemObject.map({ (item) -> ShoppingItems in
+                if changeShoppingItem?.id == item.id{
+                    return changeShoppingItem!
+                }
+                else{
+                    return item
+                }
+            })
+        }
+        self.tableView.reloadData()
+    }
 }
-
