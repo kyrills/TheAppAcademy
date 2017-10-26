@@ -8,23 +8,30 @@ class DiveSiteService{
     private init(){}
     
     var ref: DatabaseReference!
-    var diveItemArray: [DiveItems] = []
     
     public func getDiveSiteData(){
         ref = Database.database().reference()
         ref.observeSingleEvent(of: .value , with: { (snapshot) in
             if let dict = snapshot.value as? NSDictionary,
-                let data = dict["data"] as? NSArray{
-                for dict in data {
-                    self.dictionaryToObject(dataDict: dict as! NSDictionary)
+                let data = dict[databaseKeys.dataKey] as? [String: Any]{
+                var diveItemArray: [DiveItems] = []
+
+                for (key, dict) in data {
+                    if var itemObj = self.dictionaryToOneObject(dict: dict as! NSDictionary) {
+                        itemObj.id = key
+                        print(key)
+                        print(itemObj.id)
+                        diveItemArray.append(itemObj)
+                    }
+                    
                 }
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue:notificationID.diveDataAdded),
                                                 object: self,
-                                                userInfo: [databaseKeys.dataKey : self.diveItemArray])
+                                                userInfo: [databaseKeys.dataKey : diveItemArray])
             }
         })
         
-        ref.child("data").observe(.childAdded, with: { (snapshot) in
+        ref.child(databaseKeys.dataKey).observe(.childAdded, with: { (snapshot) in
             if let data = snapshot.value as? NSDictionary,
                 var obj = self.dictionaryToOneObject(dict: data) {
                 obj.id = snapshot.key
@@ -33,13 +40,31 @@ class DiveSiteService{
                                                 userInfo: [databaseKeys.dataKey :obj])
             }
     })
-}
-    
-    func dictionaryToObject(dataDict: NSDictionary ) {
-        if let itemObj = dictionaryToOneObject(dict: dataDict as NSDictionary) {
-            diveItemArray.append(itemObj)
-        }
+        
+        ref.child(databaseKeys.dataKey).observe(.childChanged, with: { (snapshot) in
+            if let data = snapshot.value as? NSDictionary,
+                var obj = self.dictionaryToOneObject(dict: data){
+                obj.id = snapshot.key
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue:notificationID.changedData),
+                                                object: self,
+                                                userInfo: [databaseKeys.dataKey :obj])
+            }
+        })
+        
     }
+    
+    func addDiveItem(diveItem: DiveItems){
+        let addDict = objToDictionary(diveItem: diveItem)
+        ref.child(databaseKeys.dataKey).child(diveItem.id).setValue(addDict)
+    }
+    func removeDiveItem(diveItem: DiveItems){
+    ref.child(databaseKeys.dataKey).child(diveItem.id).removeValue()
+    }
+    func updateDiveItem(diveItem: DiveItems){
+        let updated = objToDictionary(diveItem: diveItem)
+        ref.child(databaseKeys.dataKey).child(diveItem.id).updateChildValues(updated!)
+    }
+    
     
     func dictionaryToOneObject(dict: NSDictionary) -> DiveItems?{
         let decoder = JSONDecoder()
@@ -52,5 +77,21 @@ class DiveSiteService{
             return nil
         }
         
+    }
+    
+    
+    func objToDictionary(diveItem: DiveItems) -> [String: Any]? {
+        let encoder = JSONEncoder()
+        if #available(iOS 11.0, *){
+            encoder.outputFormatting = .sortedKeys
+        }
+        do{
+            let encodedDiveItem = try encoder.encode(diveItem)
+            let dict = try JSONSerialization.jsonObject(with: encodedDiveItem, options: []) as? [String: Any]
+            
+            return dict as [String: Any]?
+        } catch {
+            return [:]
+        }
     }
 }

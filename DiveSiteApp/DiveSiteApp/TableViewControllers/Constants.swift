@@ -13,6 +13,7 @@ struct segues{
 struct notificationID {
     static let diveDataAdded = "diveDataAdded"
     static let addedData = "addedData"
+    static let changedData = "changedData"
 }
 
 struct databaseKeys {

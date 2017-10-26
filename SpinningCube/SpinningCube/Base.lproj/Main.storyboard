@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DaK-wZ-Dsv">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13524"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="VPe-HN-bcQ">
+            <objects>
+                <viewController id="DaK-wZ-Dsv" customClass="ViewController" customModule="SpinningCube" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jQ4-fS-Fhf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uwv-hb-ozG">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggm-3j-eS5">
+                                <rect key="frame" x="315" y="637" width="60" height="30"/>
+                                <state key="normal" title="Add Cup"/>
+                                <connections>
+                                    <action selector="addCup:" destination="DaK-wZ-Dsv" eventType="touchUpInside" id="E3L-eB-m2s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sw1-S0-kXd">
+                                <rect key="frame" x="0.0" y="637" width="68" height="30"/>
+                                <state key="normal" title="Add Cube"/>
+                                <connections>
+                                    <action selector="addCube:" destination="DaK-wZ-Dsv" eventType="touchUpInside" id="2Z8-Ug-SIU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uwv-hb-ozG" firstAttribute="leading" secondItem="sw1-S0-kXd" secondAttribute="leading" id="0VY-x7-Fqu"/>
+                            <constraint firstItem="uwv-hb-ozG" firstAttribute="trailing" secondItem="Ggm-3j-eS5" secondAttribute="trailing" id="2zz-3p-ZXa"/>
+                            <constraint firstItem="uwv-hb-ozG" firstAttribute="bottom" secondItem="9A0-6F-Vd0" secondAttribute="bottom" id="Fmi-mj-Rek"/>
+                            <constraint firstItem="sw1-S0-kXd" firstAttribute="bottom" secondItem="uwv-hb-ozG" secondAttribute="bottom" id="HLi-Hu-CDr"/>
+                            <constraint firstItem="uwv-hb-ozG" firstAttribute="leading" secondItem="jQ4-fS-Fhf" secondAttribute="leading" id="aiL-jT-MR5"/>
+                            <constraint firstAttribute="trailing" secondItem="uwv-hb-ozG" secondAttribute="trailing" id="dia-nK-yVT"/>
+                            <constraint firstItem="sw1-S0-kXd" firstAttribute="baseline" secondItem="Ggm-3j-eS5" secondAttribute="baseline" id="m50-bC-Nfn"/>
+                            <constraint firstItem="uwv-hb-ozG" firstAttribute="top" secondItem="9A0-6F-Vd0" secondAttribute="top" id="oUq-VP-Eyb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9A0-6F-Vd0"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="uwv-hb-ozG" id="AY3-2b-2Ca"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ua7-Fc-do5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="533.60000000000002" y="330.58470764617692"/>
+        </scene>
+    </scenes>
+</document>

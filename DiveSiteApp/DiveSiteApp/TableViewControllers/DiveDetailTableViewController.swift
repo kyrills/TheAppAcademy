@@ -49,7 +49,25 @@ class DiveDetailTableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super .viewWillDisappear(animated)
+        
+        let cell = tableView.cellForRow(at: IndexPath.init(row: 0, section: 0)) as! ShoppingDetailCell
+        selectedDetailObject?.name = cell.nameLabel.text!
+        selectedDetailObject?.diveLocation = cell.diveLocation.text!
+        selectedDetailObject?.ocean = cell.oceanLabel.text!
+        if let depth = Int(cell.depthMetres.text!){
+            selectedDetailObject?.depthMetres = depth
+            DiveSiteService.reference.updateDiveItem(diveItem: selectedDetailObject!)
+        }
+//        print(selectedDetailObject)
+        
+    }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 400
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

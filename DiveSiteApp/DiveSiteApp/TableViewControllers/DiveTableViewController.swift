@@ -1,11 +1,3 @@
-//
-//  DiveTableViewController.swift
-//  DiveSiteApp
-//
-//  Created by Kyrill van Seventer on 24/10/2017.
-//  Copyright © 2017 Kyrill van Seventer. All rights reserved.
-//
-
 import UIKit
 
 class DiveTableViewController: UITableViewController {
@@ -25,6 +17,11 @@ class DiveTableViewController: UITableViewController {
                                                name: NSNotification.Name(rawValue: notificationID.addedData),
                                                object: nil)
         
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(DiveTableViewController.changedObservers),
+                                               name: NSNotification.Name(rawValue: notificationID.changedData),
+                                               object: nil)
+        
         
         let divingCell = UINib.init(nibName: "ShoppingCell", bundle: nil)
         self.tableView.register(divingCell, forCellReuseIdentifier: tableCellID.divingCellID)
@@ -34,18 +31,13 @@ class DiveTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return diveItemObject.count
     }
 
@@ -54,7 +46,6 @@ class DiveTableViewController: UITableViewController {
         let tempDiveObject = diveItemObject[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: tableCellID.divingCellID, for: indexPath) as! ShoppingCell
 
-        // Configure the cell...
         cell.cellNameLabel.text = tempDiveObject.name
         return cell
     }
@@ -72,10 +63,33 @@ class DiveTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
+    @objc func changedObservers(notification: NSNotification) {
+        
+        if let diveItemDict = notification.userInfo as? Dictionary<String , DiveItems> {
+            let changeDiveItemObject = diveItemDict[databaseKeys.dataKey]
+            self.diveItemObject = self.diveItemObject.map({ (item) -> DiveItems in
+                if changeDiveItemObject?.id == item.id{
+                    return changeDiveItemObject!
+                }
+                else{
+                    return item
+                }
+            })
+        }
+        self.tableView.reloadData()
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedTableViewItem = diveItemObject[indexPath.row]
         performSegue(withIdentifier: segues.detailTableViewSegue, sender: self)
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            DiveSiteService.reference.removeDiveItem(diveItem: self.diveItemObject[indexPath.row])
+            diveItemObject.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }}
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier ==  segues.detailTableViewSegue{
@@ -84,50 +98,40 @@ class DiveTableViewController: UITableViewController {
         }
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    @IBAction func addShoppingItem(_ sender: Any) {
+        let alert = UIAlertController(title: "Dive Item", message: "Add new stuff.", preferredStyle: .alert)
+        
+        alert.addTextField { (name) in
+            name.placeholder = "Name"
+        }
+        alert.addTextField { (diveLocation) in
+            diveLocation.placeholder = "Location"
+        }
+        alert.addTextField{(depthMetres) in
+            depthMetres.keyboardType = .numberPad
+            depthMetres.placeholder = "Depth"
+        }
+        alert.addTextField{(ocean) in
+            ocean.placeholder = "ocean"
+        }
+        alert.addTextField{(imageURLS) in
+            imageURLS.placeholder = "Image URL"
+        }
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            if let name = alert?.textFields?[0].text,
+                let diveLocation = alert?.textFields?[1].text,
+                let depthMetres = alert?.textFields?[2].text,
+                let ocean = alert?.textFields?[3].text,
+                let imageURLS = alert?.textFields?[4].text,
+                let depthMetresInt = Int(depthMetres){
+                let id = NSUUID().uuidString
+                let diveItem = DiveItems.init(name: name, id: id, diveLocation: diveLocation, depthMetres: depthMetresInt, ocean: ocean, imageURLS: [imageURLS])
+                DiveSiteService.reference.addDiveItem(diveItem: diveItem)
+            }
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
