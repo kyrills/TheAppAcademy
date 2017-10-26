@@ -49,7 +49,6 @@ class DetailTableViewController: UITableViewController, UIImagePickerControllerD
         if let weight = selectedDetailObject?.productWeight{
             cell.weightLabel.text = "\(weight)"
         }
-//        cell.weightLabel.text = "\(selectedDetailObject?.productWeight)"
         
         let url = URL(string: (selectedDetailObject?.productImage)!)
         cell.cellImage.kf.setImage(with: url)
@@ -78,8 +77,6 @@ class DetailTableViewController: UITableViewController, UIImagePickerControllerD
         ShoppingItemsService.sharedInstance.updateShopItem(shopItem: selectedDetailObject!)
     }
     
-    
-//    func pickPicture(){
     @objc func cameraButton(_ sender: UIButton) {
             let imagePicker = UIImagePickerController()
             let alert = UIAlertController(title: "Choose one of the following:", message: "", preferredStyle: .actionSheet)

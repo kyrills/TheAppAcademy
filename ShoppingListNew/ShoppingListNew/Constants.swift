@@ -15,7 +15,6 @@ struct notificationIDs {
     static let addedShoppingData = "addedShoppingData"
     static let changedShoppingData = "changedShoppingData"
     static let imageURL = "imageURL"
-//    static let deletedShoppingData = "deletedShoppingData"
 }
 
 struct dictionaryKeys {

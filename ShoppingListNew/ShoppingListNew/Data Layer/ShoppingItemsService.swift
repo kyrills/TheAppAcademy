@@ -3,7 +3,7 @@ import Firebase
 import FirebaseCore
 import FirebaseDatabase
 import FirebaseStorage
-//import SVProgressHUD
+import SVProgressHUD
 
 class ShoppingItemsService {
     var shoppingArray: [ShoppingItems] = []
@@ -124,6 +124,7 @@ class ShoppingItemsService {
             // Upload reported progress
             let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
                 / Double(snapshot.progress!.totalUnitCount)
+            SVProgressHUD.showProgress(Float(percentComplete), status: String(percentComplete))
         }
         
         uploadTask.observe(.success) { snapshot in
@@ -133,11 +134,9 @@ class ShoppingItemsService {
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue:notificationIDs.imageURL),
                                                         object: self,
                                                         userInfo: [notificationKeys.imageURL : url!])
-                
+            SVProgressHUD.dismiss()
                 })
-                
             })
-            
         }
         
         
