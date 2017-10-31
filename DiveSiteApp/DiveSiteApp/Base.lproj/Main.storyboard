@@ -33,6 +33,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Mei-nw-igm">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="add" id="2eV-cf-zbz">
+                            <connections>
+                                <action selector="OpenPopupView:" destination="EVb-Sz-f2g" id="OgF-Sb-w6T"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="yeQ-kp-803">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NQw-v6-N4S">
                                 <rect key="frame" x="313" y="7" width="46" height="30"/>

@@ -23,6 +23,10 @@
 		D02FE3ED1F9F314B00D601E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D02FE3EC1F9F314B00D601E1 /* Assets.xcassets */; };
 		D02FE3F01F9F314B00D601E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02FE3EE1F9F314B00D601E1 /* LaunchScreen.storyboard */; };
 		D02FE3F81F9F318D00D601E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D02FE3F71F9F318D00D601E1 /* GoogleService-Info.plist */; };
+		D0C78AEB1FA31ACE00C24891 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C78AE71FA31ACE00C24891 /* PopAnimator.swift */; };
+		D0C78AEC1FA31ACE00C24891 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C78AE81FA31ACE00C24891 /* UIViewExtension.swift */; };
+		D0C78AED1FA31ACE00C24891 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C78AE91FA31ACE00C24891 /* PopupViewController.swift */; };
+		D0C78AEE1FA31ACE00C24891 /* PopupVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0C78AEA1FA31ACE00C24891 /* PopupVC.storyboard */; };
 		E2BEEE30762F1874CB9E4C54 /* Pods_DiveSiteApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9030CF3E4C764317FAADED2B /* Pods_DiveSiteApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +40,7 @@
 		D00411A81F9F3D1800FD685A /* DiveSiteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiveSiteService.swift; sourceTree = "<group>"; };
 		D00411AA1F9F428E00FD685A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D00411AD1F9F4D2100FD685A /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = DiveSiteApp/TableCell/Fonts; sourceTree = SOURCE_ROOT; };
-		D00411AE1F9F4D2100FD685A /* ShoppingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoppingCell.swift; path = DiveSiteApp/TableCell/ShoppingCell.swift; sourceTree = SOURCE_ROOT; };
+		D00411AE1F9F4D2100FD685A /* ShoppingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoppingCell.swift; path = DiveSiteApp/PopupView/ShoppingCell.swift; sourceTree = SOURCE_ROOT; };
 		D00411AF1F9F4D2100FD685A /* ShoppingDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoppingDetailCell.swift; path = DiveSiteApp/TableCell/ShoppingDetailCell.swift; sourceTree = SOURCE_ROOT; };
 		D00411B01F9F4D2100FD685A /* ShoppingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShoppingCell.xib; path = DiveSiteApp/TableCell/ShoppingCell.xib; sourceTree = SOURCE_ROOT; };
 		D00411B11F9F4D2100FD685A /* ShoppingDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShoppingDetailCell.xib; path = DiveSiteApp/TableCell/ShoppingDetailCell.xib; sourceTree = SOURCE_ROOT; };
@@ -48,6 +52,10 @@
 		D02FE3EF1F9F314B00D601E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D02FE3F11F9F314B00D601E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D02FE3F71F9F318D00D601E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D0C78AE71FA31ACE00C24891 /* PopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
+		D0C78AE81FA31ACE00C24891 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		D0C78AE91FA31ACE00C24891 /* PopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		D0C78AEA1FA31ACE00C24891 /* PopupVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopupVC.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +130,7 @@
 		D02FE3E11F9F314B00D601E1 /* DiveSiteApp */ = {
 			isa = PBXGroup;
 			children = (
+				D0C78AE61FA31ACE00C24891 /* PopupView */,
 				D00411AC1F9F4D0200FD685A /* Cells */,
 				D00411A11F9F36AF00FD685A /* TableViewControllers */,
 				D00411A01F9F367400FD685A /* Data Layer */,
@@ -134,6 +143,17 @@
 				D02FE3E91F9F314B00D601E1 /* DiveSiteApp.xcdatamodeld */,
 			);
 			path = DiveSiteApp;
+			sourceTree = "<group>";
+		};
+		D0C78AE61FA31ACE00C24891 /* PopupView */ = {
+			isa = PBXGroup;
+			children = (
+				D0C78AE71FA31ACE00C24891 /* PopAnimator.swift */,
+				D0C78AE81FA31ACE00C24891 /* UIViewExtension.swift */,
+				D0C78AE91FA31ACE00C24891 /* PopupViewController.swift */,
+				D0C78AEA1FA31ACE00C24891 /* PopupVC.storyboard */,
+			);
+			path = PopupView;
 			sourceTree = "<group>";
 		};
 		F7DF91B4E5DE35FBA9EDA6C4 /* Pods */ = {
@@ -213,6 +233,7 @@
 				D00411B61F9F4D2200FD685A /* ShoppingDetailCell.xib in Resources */,
 				D02FE3F81F9F318D00D601E1 /* GoogleService-Info.plist in Resources */,
 				D02FE3ED1F9F314B00D601E1 /* Assets.xcassets in Resources */,
+				D0C78AEE1FA31ACE00C24891 /* PopupVC.storyboard in Resources */,
 				D02FE3E81F9F314B00D601E1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,13 +311,16 @@
 			files = (
 				D00411A91F9F3D1800FD685A /* DiveSiteService.swift in Sources */,
 				D00411A51F9F37E100FD685A /* DiveDetailTableViewController.swift in Sources */,
+				D0C78AEC1FA31ACE00C24891 /* UIViewExtension.swift in Sources */,
 				D02FE3E31F9F314B00D601E1 /* AppDelegate.swift in Sources */,
 				D02FE3EB1F9F314B00D601E1 /* DiveSiteApp.xcdatamodeld in Sources */,
+				D0C78AEB1FA31ACE00C24891 /* PopAnimator.swift in Sources */,
 				D00411AB1F9F428E00FD685A /* Constants.swift in Sources */,
 				D00411B41F9F4D2200FD685A /* ShoppingDetailCell.swift in Sources */,
 				D00411B31F9F4D2200FD685A /* ShoppingCell.swift in Sources */,
 				D00411A31F9F37D100FD685A /* DiveTableViewController.swift in Sources */,
 				D00411A71F9F389B00FD685A /* DiveItems.swift in Sources */,
+				D0C78AED1FA31ACE00C24891 /* PopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

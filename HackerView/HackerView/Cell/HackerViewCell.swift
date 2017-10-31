@@ -1,16 +1,11 @@
-//
-//  ShoppingCell.swift
-//  ShoppingListNew
-//
-//  Created by Kyrill van Seventer on 18/10/2017.
-//  Copyright © 2017 Kyrill van Seventer. All rights reserved.
-//
-
 import UIKit
 
-class ShoppingCell: UITableViewCell {
+class HackerViewCell: UITableViewCell {
 
-    @IBOutlet weak var cellNameLabel: UILabel!
+    @IBOutlet weak var articleTitle: UITextView!
+    @IBOutlet weak var articleAuthor: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,6 +15,12 @@ class ShoppingCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        articleTitle.text = nil
+        articleAuthor.text = nil
     }
     
 }

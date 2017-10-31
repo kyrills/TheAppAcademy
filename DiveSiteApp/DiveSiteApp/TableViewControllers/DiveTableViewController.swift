@@ -3,7 +3,8 @@ import UIKit
 class DiveTableViewController: UITableViewController {
     var diveItemObject: [DiveItems] = []
     var selectedTableViewItem: DiveItems?
-    
+    let transition = PopAnimator()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +30,15 @@ class DiveTableViewController: UITableViewController {
         DiveSiteService.reference.getDiveSiteData()
     }
 
+    @IBAction func OpenPopupView(_ sender: Any){
+        let popupStoryboard: UIStoryboard = UIStoryboard(name: "PopupVC", bundle: nil)
+        let popupVC = popupStoryboard.instantiateViewController(withIdentifier: "PopupVCID") as! PopupViewController
+        popupVC.transitioningDelegate = self
+        present(popupVC, animated: true)
+        
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -40,7 +50,6 @@ class DiveTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return diveItemObject.count
     }
-
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tempDiveObject = diveItemObject[indexPath.row]
@@ -97,41 +106,15 @@ class DiveTableViewController: UITableViewController {
             detailView?.selectedDetailObject = selectedTableViewItem
         }
     }
-    
-    @IBAction func addShoppingItem(_ sender: Any) {
-        let alert = UIAlertController(title: "Dive Item", message: "Add new stuff.", preferredStyle: .alert)
-        
-        alert.addTextField { (name) in
-            name.placeholder = "Name"
-        }
-        alert.addTextField { (diveLocation) in
-            diveLocation.placeholder = "Location"
-        }
-        alert.addTextField{(depthMetres) in
-            depthMetres.keyboardType = .numberPad
-            depthMetres.placeholder = "Depth"
-        }
-        alert.addTextField{(ocean) in
-            ocean.placeholder = "ocean"
-        }
-        alert.addTextField{(imageURLS) in
-            imageURLS.placeholder = "Image URL"
-        }
-        
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
-            if let name = alert?.textFields?[0].text,
-                let diveLocation = alert?.textFields?[1].text,
-                let depthMetres = alert?.textFields?[2].text,
-                let ocean = alert?.textFields?[3].text,
-                let imageURLS = alert?.textFields?[4].text,
-                let depthMetresInt = Int(depthMetres){
-                let id = NSUUID().uuidString
-                let diveItem = DiveItems.init(name: name, id: id, diveLocation: diveLocation, depthMetres: depthMetresInt, ocean: ocean, imageURLS: [imageURLS])
-                DiveSiteService.reference.addDiveItem(diveItem: diveItem)
-            }
-        }))
-        self.present(alert, animated: true, completion: nil)
-    }
-
-
 }
+
+extension DiveTableViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        
+        self.transition.presenting = true
+        return transition
+    }
+}
+

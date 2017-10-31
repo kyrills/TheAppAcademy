@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aeC-ps-vJ3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--PopupVIewController-->
+        <scene sceneID="J0j-kR-u4b">
+            <objects>
+                <viewController storyboardIdentifier="PopupVCID" title="PopupVIewController" nibName="PopupViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aeC-ps-vJ3" customClass="PopupViewController" customModule="DiveSiteApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BIX-26-gEr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5M7-1J-yjY">
+                                <rect key="frame" x="85" y="220" width="205" height="260"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Hyp-lC-sCf">
+                                        <rect key="frame" x="-5" y="8" width="215" height="236"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0J6-yN-yiW">
+                                                <rect key="frame" x="0.0" y="0.0" width="215" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gFQ-DT-e2v">
+                                                <rect key="frame" x="0.0" y="34" width="215" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HKH-ji-YQQ">
+                                                <rect key="frame" x="0.0" y="74" width="215" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Depth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lXH-ta-bn0">
+                                                <rect key="frame" x="0.0" y="114" width="215" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ocean Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l6E-fg-GqG">
+                                                <rect key="frame" x="0.0" y="154" width="215" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acl-4J-ln3">
+                                                <rect key="frame" x="0.0" y="194" width="215" height="42"/>
+                                                <color key="backgroundColor" red="0.1176470588" green="0.54901960780000003" blue="0.87687015530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="42" id="nBw-vF-IOf"/>
+                                                    <constraint firstAttribute="width" constant="215" id="ytS-qP-MoU"/>
+                                                </constraints>
+                                                <state key="normal" title="close">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="closeView:" destination="aeC-ps-vJ3" eventType="touchUpInside" id="Hnv-L4-7tz"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.75989833451244604" green="0.81476011270068471" blue="0.79154748636459427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="260" id="cX3-g9-lXS"/>
+                                    <constraint firstItem="Hyp-lC-sCf" firstAttribute="centerX" secondItem="5M7-1J-yjY" secondAttribute="centerX" id="cyL-2t-kHN"/>
+                                    <constraint firstItem="Hyp-lC-sCf" firstAttribute="top" secondItem="5M7-1J-yjY" secondAttribute="topMargin" id="ncj-B8-uoE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5M7-1J-yjY" firstAttribute="top" secondItem="Sow-xr-I9F" secondAttribute="top" constant="200" id="Bwb-T9-Fsc"/>
+                            <constraint firstItem="5M7-1J-yjY" firstAttribute="leading" secondItem="Sow-xr-I9F" secondAttribute="leading" constant="85" id="NSO-JN-Mpf"/>
+                            <constraint firstItem="Sow-xr-I9F" firstAttribute="trailing" secondItem="5M7-1J-yjY" secondAttribute="trailing" constant="85" id="rMZ-Lz-Ky8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Sow-xr-I9F"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="acl-4J-ln3" id="NFM-Cj-l3e"/>
+                        <outlet property="containerView" destination="BIX-26-gEr" id="V8j-Uk-N7z"/>
+                        <outlet property="depthField" destination="lXH-ta-bn0" id="6Qj-s0-OaM"/>
+                        <outlet property="locationFIeld" destination="HKH-ji-YQQ" id="dBv-zP-Ag1"/>
+                        <outlet property="nameField" destination="gFQ-DT-e2v" id="nn3-fn-EmN"/>
+                        <outlet property="oceanField" destination="l6E-fg-GqG" id="iez-dM-shn"/>
+                        <outlet property="popupView" destination="5M7-1J-yjY" id="imz-1V-l3H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EW1-3D-HIJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="47.200000000000003" y="111.0944527736132"/>
+        </scene>
+    </scenes>
+</document>
