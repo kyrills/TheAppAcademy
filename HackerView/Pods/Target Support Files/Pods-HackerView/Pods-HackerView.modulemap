@@ -1,0 +1,6 @@
+framework module Pods_HackerView {
+  umbrella header "Pods-HackerView-umbrella.h"
+
+  export *
+  module * { export * }
+}
