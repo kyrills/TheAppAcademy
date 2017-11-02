@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13524"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="arproject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lT4-OI-yF5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LHo-Wb-ROG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sut-kf-WbW">
+                                <rect key="frame" x="117" y="617" width="140" height="30"/>
+                                <state key="normal" title="Show or Hide Ship"/>
+                                <connections>
+                                    <action selector="hideShowShip:" destination="BV1-FR-VrT" eventType="touchUpInside" id="y0j-AT-tRt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJM-9d-uQO">
+                                <rect key="frame" x="282" y="617" width="77" height="30"/>
+                                <state key="normal" title="Add Text"/>
+                                <connections>
+                                    <action selector="addText:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Utx-Q2-Afi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Sut-kf-WbW" firstAttribute="leading" secondItem="XQs-3i-5xL" secondAttribute="leading" constant="117" id="JzW-qD-QfN"/>
+                            <constraint firstItem="QJM-9d-uQO" firstAttribute="top" secondItem="XQs-3i-5xL" secondAttribute="top" constant="597" id="LrK-TJ-he8"/>
+                            <constraint firstItem="XQs-3i-5xL" firstAttribute="bottom" secondItem="Sut-kf-WbW" secondAttribute="bottom" constant="20" id="MGT-jf-ihZ"/>
+                            <constraint firstItem="LHo-Wb-ROG" firstAttribute="bottom" secondItem="XQs-3i-5xL" secondAttribute="bottom" id="SR9-bF-hyc"/>
+                            <constraint firstItem="LHo-Wb-ROG" firstAttribute="trailing" secondItem="XQs-3i-5xL" secondAttribute="trailing" id="TH2-C9-NIN"/>
+                            <constraint firstItem="XQs-3i-5xL" firstAttribute="bottom" secondItem="QJM-9d-uQO" secondAttribute="bottom" constant="20" id="VzV-w7-Zys"/>
+                            <constraint firstItem="QJM-9d-uQO" firstAttribute="leading" secondItem="Sut-kf-WbW" secondAttribute="trailing" constant="25" id="WwW-Mz-rLZ"/>
+                            <constraint firstItem="LHo-Wb-ROG" firstAttribute="top" secondItem="lT4-OI-yF5" secondAttribute="top" id="kzw-e2-JqQ"/>
+                            <constraint firstItem="Sut-kf-WbW" firstAttribute="top" secondItem="XQs-3i-5xL" secondAttribute="top" constant="597" id="m2D-2p-Yww"/>
+                            <constraint firstItem="XQs-3i-5xL" firstAttribute="trailing" secondItem="Sut-kf-WbW" secondAttribute="trailing" constant="118" id="qZZ-Rb-dmL"/>
+                            <constraint firstItem="LHo-Wb-ROG" firstAttribute="leading" secondItem="XQs-3i-5xL" secondAttribute="leading" id="vLX-cY-IyJ"/>
+                            <constraint firstItem="XQs-3i-5xL" firstAttribute="trailing" secondItem="QJM-9d-uQO" secondAttribute="trailing" constant="16" id="y7K-NU-5Mx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XQs-3i-5xL"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="LHo-Wb-ROG" id="uLJ-eN-E2K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+        </scene>
+    </scenes>
+</document>

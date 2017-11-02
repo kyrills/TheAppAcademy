@@ -11,7 +11,6 @@ class HackerNewsService{
     
     func getTheHackerNews(_ cnt: Int, _ query: String) {
         Alamofire.request("https://hn.algolia.com/api/v1/search_by_date?query=\(query)?page=\(cnt)", method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { (jsonData) in
-            
             if let json = jsonData.result.value as? NSDictionary{
                 if let usableStuff = json["hits"] as? NSArray{
                     for i in usableStuff{
@@ -23,6 +22,7 @@ class HackerNewsService{
                             let created = data["created_at_i"] as? Int,
                             let intID = Int(id){
                             
+                            print(query)
                             
                             let obj = Properties.init(storyTitle: title, storyURL: storyURL, objectID: intID, author: author, createdAt: created)
                             self.hackingObject.append(obj)
@@ -49,6 +49,11 @@ class HackerNewsService{
         return source.filter({ (v) -> Bool in
             return seen.updateValue(true, forKey: v) == nil
         })
+    }
+    
+    func emptyStuff(_ cnt: Int, _ query: String){
+        hackingObject = []
+        getTheHackerNews(cnt, query)
     }
     
 }
