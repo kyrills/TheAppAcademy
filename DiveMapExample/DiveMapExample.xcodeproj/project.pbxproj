@@ -1,0 +1,804 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E8E3216413A845AB9A977C9 /* Pods_DiveMapExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B67EC2B5F42B8236A2092384 /* Pods_DiveMapExample.framework */; };
+		8CBFAD7BEACD4FEA857C3E7C /* Pods_DiveMapExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE6E0BCB3CE443BF50396657 /* Pods_DiveMapExampleTests.framework */; };
+		BCBFE47B1C2F66C44B6D1648 /* Pods_DiveMapExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F482CDFC48C35F1C618BA49A /* Pods_DiveMapExampleUITests.framework */; };
+		D03ADA7E1FA9D8E700ABB19B /* DiveMapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03ADA7D1FA9D8E700ABB19B /* DiveMapService.swift */; };
+		D03ADA801FA9D9D600ABB19B /* DiveMapDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03ADA7F1FA9D9D600ABB19B /* DiveMapDataProperties.swift */; };
+		D03ADA821FA9DD9A00ABB19B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03ADA811FA9DD9A00ABB19B /* Constants.swift */; };
+		D03ADA841FA9E19800ABB19B /* DiveMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03ADA831FA9E19800ABB19B /* DiveMapAnnotation.swift */; };
+		D03ADA861FAA286200ABB19B /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03ADA851FAA286200ABB19B /* LocationViewController.swift */; };
+		D03ADA881FAB229000ABB19B /* DiveDetailProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03ADA871FAB229000ABB19B /* DiveDetailProperties.swift */; };
+		D06CDA131FA9CFA800727EE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06CDA121FA9CFA800727EE0 /* AppDelegate.swift */; };
+		D06CDA151FA9CFA800727EE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06CDA141FA9CFA800727EE0 /* ViewController.swift */; };
+		D06CDA181FA9CFA800727EE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D06CDA161FA9CFA800727EE0 /* Main.storyboard */; };
+		D06CDA1A1FA9CFA800727EE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D06CDA191FA9CFA800727EE0 /* Assets.xcassets */; };
+		D06CDA1D1FA9CFA800727EE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D06CDA1B1FA9CFA800727EE0 /* LaunchScreen.storyboard */; };
+		D06CDA281FA9CFA800727EE0 /* DiveMapExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06CDA271FA9CFA800727EE0 /* DiveMapExampleTests.swift */; };
+		D06CDA331FA9CFA800727EE0 /* DiveMapExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06CDA321FA9CFA800727EE0 /* DiveMapExampleUITests.swift */; };
+		D0CFCD2A1FAB2D64001A79AD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CFCD291FAB2D64001A79AD /* DetailViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D06CDA241FA9CFA800727EE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D06CDA071FA9CFA800727EE0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D06CDA0E1FA9CFA800727EE0;
+			remoteInfo = DiveMapExample;
+		};
+		D06CDA2F1FA9CFA800727EE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D06CDA071FA9CFA800727EE0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D06CDA0E1FA9CFA800727EE0;
+			remoteInfo = DiveMapExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07605C4F0D99043E08B573AD /* Pods-DiveMapExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiveMapExampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DiveMapExampleUITests/Pods-DiveMapExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		37FD2B305777F1588A1F718C /* Pods-DiveMapExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiveMapExampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiveMapExampleUITests/Pods-DiveMapExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7951C3350573C185E8E23842 /* Pods-DiveMapExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiveMapExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DiveMapExample/Pods-DiveMapExample.debug.xcconfig"; sourceTree = "<group>"; };
+		B67EC2B5F42B8236A2092384 /* Pods_DiveMapExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiveMapExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D03ADA7D1FA9D8E700ABB19B /* DiveMapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiveMapService.swift; sourceTree = "<group>"; };
+		D03ADA7F1FA9D9D600ABB19B /* DiveMapDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiveMapDataProperties.swift; sourceTree = "<group>"; };
+		D03ADA811FA9DD9A00ABB19B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D03ADA831FA9E19800ABB19B /* DiveMapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiveMapAnnotation.swift; sourceTree = "<group>"; };
+		D03ADA851FAA286200ABB19B /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		D03ADA871FAB229000ABB19B /* DiveDetailProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiveDetailProperties.swift; sourceTree = "<group>"; };
+		D06CDA0F1FA9CFA800727EE0 /* DiveMapExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiveMapExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D06CDA121FA9CFA800727EE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D06CDA141FA9CFA800727EE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D06CDA171FA9CFA800727EE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D06CDA191FA9CFA800727EE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D06CDA1C1FA9CFA800727EE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D06CDA1E1FA9CFA800727EE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D06CDA231FA9CFA800727EE0 /* DiveMapExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiveMapExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D06CDA271FA9CFA800727EE0 /* DiveMapExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiveMapExampleTests.swift; sourceTree = "<group>"; };
+		D06CDA291FA9CFA800727EE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D06CDA2E1FA9CFA800727EE0 /* DiveMapExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiveMapExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D06CDA321FA9CFA800727EE0 /* DiveMapExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiveMapExampleUITests.swift; sourceTree = "<group>"; };
+		D06CDA341FA9CFA800727EE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0CFCD291FAB2D64001A79AD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		DA6EA1FF35E32CBDDB05542C /* Pods-DiveMapExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiveMapExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiveMapExample/Pods-DiveMapExample.release.xcconfig"; sourceTree = "<group>"; };
+		ECA935A10A02DD6C2D02B453 /* Pods-DiveMapExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiveMapExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiveMapExampleTests/Pods-DiveMapExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		EE6E0BCB3CE443BF50396657 /* Pods_DiveMapExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiveMapExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F482CDFC48C35F1C618BA49A /* Pods_DiveMapExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiveMapExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F88C847F789561B910F99D09 /* Pods-DiveMapExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiveMapExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DiveMapExampleTests/Pods-DiveMapExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D06CDA0C1FA9CFA800727EE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E8E3216413A845AB9A977C9 /* Pods_DiveMapExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D06CDA201FA9CFA800727EE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CBFAD7BEACD4FEA857C3E7C /* Pods_DiveMapExampleTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D06CDA2B1FA9CFA800727EE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCBFE47B1C2F66C44B6D1648 /* Pods_DiveMapExampleUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42B5D06DB548F471A88E5E68 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7951C3350573C185E8E23842 /* Pods-DiveMapExample.debug.xcconfig */,
+				DA6EA1FF35E32CBDDB05542C /* Pods-DiveMapExample.release.xcconfig */,
+				F88C847F789561B910F99D09 /* Pods-DiveMapExampleTests.debug.xcconfig */,
+				ECA935A10A02DD6C2D02B453 /* Pods-DiveMapExampleTests.release.xcconfig */,
+				07605C4F0D99043E08B573AD /* Pods-DiveMapExampleUITests.debug.xcconfig */,
+				37FD2B305777F1588A1F718C /* Pods-DiveMapExampleUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B96AF99983BDE3EE9372F63E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B67EC2B5F42B8236A2092384 /* Pods_DiveMapExample.framework */,
+				EE6E0BCB3CE443BF50396657 /* Pods_DiveMapExampleTests.framework */,
+				F482CDFC48C35F1C618BA49A /* Pods_DiveMapExampleUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D06CDA061FA9CFA800727EE0 = {
+			isa = PBXGroup;
+			children = (
+				D06CDA111FA9CFA800727EE0 /* DiveMapExample */,
+				D06CDA261FA9CFA800727EE0 /* DiveMapExampleTests */,
+				D06CDA311FA9CFA800727EE0 /* DiveMapExampleUITests */,
+				D06CDA101FA9CFA800727EE0 /* Products */,
+				42B5D06DB548F471A88E5E68 /* Pods */,
+				B96AF99983BDE3EE9372F63E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D06CDA101FA9CFA800727EE0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D06CDA0F1FA9CFA800727EE0 /* DiveMapExample.app */,
+				D06CDA231FA9CFA800727EE0 /* DiveMapExampleTests.xctest */,
+				D06CDA2E1FA9CFA800727EE0 /* DiveMapExampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D06CDA111FA9CFA800727EE0 /* DiveMapExample */ = {
+			isa = PBXGroup;
+			children = (
+				D06CDA401FA9D5F400727EE0 /* DataLayer */,
+				D06CDA121FA9CFA800727EE0 /* AppDelegate.swift */,
+				D06CDA141FA9CFA800727EE0 /* ViewController.swift */,
+				D0CFCD291FAB2D64001A79AD /* DetailViewController.swift */,
+				D03ADA851FAA286200ABB19B /* LocationViewController.swift */,
+				D03ADA831FA9E19800ABB19B /* DiveMapAnnotation.swift */,
+				D06CDA161FA9CFA800727EE0 /* Main.storyboard */,
+				D06CDA191FA9CFA800727EE0 /* Assets.xcassets */,
+				D06CDA1B1FA9CFA800727EE0 /* LaunchScreen.storyboard */,
+				D06CDA1E1FA9CFA800727EE0 /* Info.plist */,
+			);
+			path = DiveMapExample;
+			sourceTree = "<group>";
+		};
+		D06CDA261FA9CFA800727EE0 /* DiveMapExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				D06CDA271FA9CFA800727EE0 /* DiveMapExampleTests.swift */,
+				D06CDA291FA9CFA800727EE0 /* Info.plist */,
+			);
+			path = DiveMapExampleTests;
+			sourceTree = "<group>";
+		};
+		D06CDA311FA9CFA800727EE0 /* DiveMapExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D06CDA321FA9CFA800727EE0 /* DiveMapExampleUITests.swift */,
+				D06CDA341FA9CFA800727EE0 /* Info.plist */,
+			);
+			path = DiveMapExampleUITests;
+			sourceTree = "<group>";
+		};
+		D06CDA401FA9D5F400727EE0 /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				D03ADA7D1FA9D8E700ABB19B /* DiveMapService.swift */,
+				D03ADA811FA9DD9A00ABB19B /* Constants.swift */,
+				D03ADA7F1FA9D9D600ABB19B /* DiveMapDataProperties.swift */,
+				D03ADA871FAB229000ABB19B /* DiveDetailProperties.swift */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D06CDA0E1FA9CFA800727EE0 /* DiveMapExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D06CDA371FA9CFA800727EE0 /* Build configuration list for PBXNativeTarget "DiveMapExample" */;
+			buildPhases = (
+				EEAF9E4EFF72F248A084F4F6 /* [CP] Check Pods Manifest.lock */,
+				D06CDA0B1FA9CFA800727EE0 /* Sources */,
+				D06CDA0C1FA9CFA800727EE0 /* Frameworks */,
+				D06CDA0D1FA9CFA800727EE0 /* Resources */,
+				2B7379A96A76DFA996BD47A9 /* [CP] Embed Pods Frameworks */,
+				72ED592F84AC6E958040BE82 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DiveMapExample;
+			productName = DiveMapExample;
+			productReference = D06CDA0F1FA9CFA800727EE0 /* DiveMapExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D06CDA221FA9CFA800727EE0 /* DiveMapExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D06CDA3A1FA9CFA800727EE0 /* Build configuration list for PBXNativeTarget "DiveMapExampleTests" */;
+			buildPhases = (
+				0CFA2AF55EE9001E897412F0 /* [CP] Check Pods Manifest.lock */,
+				D06CDA1F1FA9CFA800727EE0 /* Sources */,
+				D06CDA201FA9CFA800727EE0 /* Frameworks */,
+				D06CDA211FA9CFA800727EE0 /* Resources */,
+				07B780617358E55D070952C5 /* [CP] Embed Pods Frameworks */,
+				9F07010FFE1D1ED47EEE11F0 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D06CDA251FA9CFA800727EE0 /* PBXTargetDependency */,
+			);
+			name = DiveMapExampleTests;
+			productName = DiveMapExampleTests;
+			productReference = D06CDA231FA9CFA800727EE0 /* DiveMapExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D06CDA2D1FA9CFA800727EE0 /* DiveMapExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D06CDA3D1FA9CFA800727EE0 /* Build configuration list for PBXNativeTarget "DiveMapExampleUITests" */;
+			buildPhases = (
+				E2218072F684748DF4AF6A16 /* [CP] Check Pods Manifest.lock */,
+				D06CDA2A1FA9CFA800727EE0 /* Sources */,
+				D06CDA2B1FA9CFA800727EE0 /* Frameworks */,
+				D06CDA2C1FA9CFA800727EE0 /* Resources */,
+				FBE05687C3D3EC52222660EF /* [CP] Embed Pods Frameworks */,
+				84E728C339B5F606AA47D275 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D06CDA301FA9CFA800727EE0 /* PBXTargetDependency */,
+			);
+			name = DiveMapExampleUITests;
+			productName = DiveMapExampleUITests;
+			productReference = D06CDA2E1FA9CFA800727EE0 /* DiveMapExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D06CDA071FA9CFA800727EE0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Kyrill van Seventer";
+				TargetAttributes = {
+					D06CDA0E1FA9CFA800727EE0 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					D06CDA221FA9CFA800727EE0 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D06CDA0E1FA9CFA800727EE0;
+					};
+					D06CDA2D1FA9CFA800727EE0 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D06CDA0E1FA9CFA800727EE0;
+					};
+				};
+			};
+			buildConfigurationList = D06CDA0A1FA9CFA800727EE0 /* Build configuration list for PBXProject "DiveMapExample" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D06CDA061FA9CFA800727EE0;
+			productRefGroup = D06CDA101FA9CFA800727EE0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D06CDA0E1FA9CFA800727EE0 /* DiveMapExample */,
+				D06CDA221FA9CFA800727EE0 /* DiveMapExampleTests */,
+				D06CDA2D1FA9CFA800727EE0 /* DiveMapExampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D06CDA0D1FA9CFA800727EE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D06CDA1D1FA9CFA800727EE0 /* LaunchScreen.storyboard in Resources */,
+				D06CDA1A1FA9CFA800727EE0 /* Assets.xcassets in Resources */,
+				D06CDA181FA9CFA800727EE0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D06CDA211FA9CFA800727EE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D06CDA2C1FA9CFA800727EE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07B780617358E55D070952C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiveMapExampleTests/Pods-DiveMapExampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0CFA2AF55EE9001E897412F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DiveMapExampleTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2B7379A96A76DFA996BD47A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DiveMapExample/Pods-DiveMapExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiveMapExample/Pods-DiveMapExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72ED592F84AC6E958040BE82 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiveMapExample/Pods-DiveMapExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84E728C339B5F606AA47D275 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiveMapExampleUITests/Pods-DiveMapExampleUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F07010FFE1D1ED47EEE11F0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiveMapExampleTests/Pods-DiveMapExampleTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2218072F684748DF4AF6A16 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DiveMapExampleUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEAF9E4EFF72F248A084F4F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DiveMapExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBE05687C3D3EC52222660EF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiveMapExampleUITests/Pods-DiveMapExampleUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D06CDA0B1FA9CFA800727EE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D03ADA861FAA286200ABB19B /* LocationViewController.swift in Sources */,
+				D03ADA821FA9DD9A00ABB19B /* Constants.swift in Sources */,
+				D06CDA151FA9CFA800727EE0 /* ViewController.swift in Sources */,
+				D0CFCD2A1FAB2D64001A79AD /* DetailViewController.swift in Sources */,
+				D06CDA131FA9CFA800727EE0 /* AppDelegate.swift in Sources */,
+				D03ADA841FA9E19800ABB19B /* DiveMapAnnotation.swift in Sources */,
+				D03ADA881FAB229000ABB19B /* DiveDetailProperties.swift in Sources */,
+				D03ADA7E1FA9D8E700ABB19B /* DiveMapService.swift in Sources */,
+				D03ADA801FA9D9D600ABB19B /* DiveMapDataProperties.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D06CDA1F1FA9CFA800727EE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D06CDA281FA9CFA800727EE0 /* DiveMapExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D06CDA2A1FA9CFA800727EE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D06CDA331FA9CFA800727EE0 /* DiveMapExampleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D06CDA251FA9CFA800727EE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D06CDA0E1FA9CFA800727EE0 /* DiveMapExample */;
+			targetProxy = D06CDA241FA9CFA800727EE0 /* PBXContainerItemProxy */;
+		};
+		D06CDA301FA9CFA800727EE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D06CDA0E1FA9CFA800727EE0 /* DiveMapExample */;
+			targetProxy = D06CDA2F1FA9CFA800727EE0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D06CDA161FA9CFA800727EE0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D06CDA171FA9CFA800727EE0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D06CDA1B1FA9CFA800727EE0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D06CDA1C1FA9CFA800727EE0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D06CDA351FA9CFA800727EE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D06CDA361FA9CFA800727EE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D06CDA381FA9CFA800727EE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7951C3350573C185E8E23842 /* Pods-DiveMapExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 35Y72ML6XR;
+				INFOPLIST_FILE = DiveMapExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KyrillvanSeventer.DiveMapExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D06CDA391FA9CFA800727EE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA6EA1FF35E32CBDDB05542C /* Pods-DiveMapExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 35Y72ML6XR;
+				INFOPLIST_FILE = DiveMapExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KyrillvanSeventer.DiveMapExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D06CDA3B1FA9CFA800727EE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F88C847F789561B910F99D09 /* Pods-DiveMapExampleTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 35Y72ML6XR;
+				INFOPLIST_FILE = DiveMapExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KyrillvanSeventer.DiveMapExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DiveMapExample.app/DiveMapExample";
+			};
+			name = Debug;
+		};
+		D06CDA3C1FA9CFA800727EE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECA935A10A02DD6C2D02B453 /* Pods-DiveMapExampleTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 35Y72ML6XR;
+				INFOPLIST_FILE = DiveMapExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KyrillvanSeventer.DiveMapExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DiveMapExample.app/DiveMapExample";
+			};
+			name = Release;
+		};
+		D06CDA3E1FA9CFA800727EE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07605C4F0D99043E08B573AD /* Pods-DiveMapExampleUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 35Y72ML6XR;
+				INFOPLIST_FILE = DiveMapExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KyrillvanSeventer.DiveMapExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DiveMapExample;
+			};
+			name = Debug;
+		};
+		D06CDA3F1FA9CFA800727EE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37FD2B305777F1588A1F718C /* Pods-DiveMapExampleUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 35Y72ML6XR;
+				INFOPLIST_FILE = DiveMapExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KyrillvanSeventer.DiveMapExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DiveMapExample;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D06CDA0A1FA9CFA800727EE0 /* Build configuration list for PBXProject "DiveMapExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D06CDA351FA9CFA800727EE0 /* Debug */,
+				D06CDA361FA9CFA800727EE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D06CDA371FA9CFA800727EE0 /* Build configuration list for PBXNativeTarget "DiveMapExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D06CDA381FA9CFA800727EE0 /* Debug */,
+				D06CDA391FA9CFA800727EE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D06CDA3A1FA9CFA800727EE0 /* Build configuration list for PBXNativeTarget "DiveMapExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D06CDA3B1FA9CFA800727EE0 /* Debug */,
+				D06CDA3C1FA9CFA800727EE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D06CDA3D1FA9CFA800727EE0 /* Build configuration list for PBXNativeTarget "DiveMapExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D06CDA3E1FA9CFA800727EE0 /* Debug */,
+				D06CDA3F1FA9CFA800727EE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D06CDA071FA9CFA800727EE0 /* Project object */;
+}
